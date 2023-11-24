@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s, ease;
+  }
+  
+  header .brand {
+    color: #e1d9d1;
+    font-family: "Poppins";
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  header .brand:hover {
+    color: #a5806f;
+  }
+  
+  header .navigation {
+    position: relative;
+  }
+  
+  header .navigation .navigation-items a {
+    position: relative;
+    color: #e1d9d1;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3 sec ease;
+  }
+  
+  header .navigation .navigation-items a:before {
+    content: "";
+    position: absolute;
+    background: #e1d9d1;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+  }
+  
+  header .navigation .navigation-items a:hover:before {
+    width: 100%;
+    background: #a5806f;
+  }
+  
+  section {
+    padding: 100px 200px;
+  }
+  
+  .home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: "Poppins";
+    flex-direction: column;
+  }
+  
+  .home:before {
+    z-index: 777;
+    content: "";
+    position: absolute;
+    background: rgba(251, 3, 3, 0.034);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .home .content {
+    z-index: 888;
+    color: #e1d9d1;
+    width: 70%;
+    margin-top: 50px;
+    display: none;
+    font-family: "Poppins";
+  }
+  
+  .backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+  .home .content.active {
+    display: block;
+  }
+  
+  .home .content h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+  }
+  
+  .home .content h1 span {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .home .content a {
+    background: #e1d9d1;
+    padding: 15px 35px;
+    color: #a5806f;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  
+  .home .content a:hover {
+    background: #a5806f;
+    color: #fff;
+  }
+  
+  .home img {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slider-navigation {
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+  }
+  
+  .slider-navigation .nav-btn {
+    width: 12px;
+    height: 12px;
+    background: #a5806f;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+    margin-left: 6px;
+  }
+  
+  .slider-navigation .nav-btn.active {
+    background: #a5806f;
+  }
+  
+  .slider-navigation.nav-btn:not(:last-child) {
+    margin-top: 20px;
+  }
+  
+  .slider-navigation .nav-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  .home .content p {
+    margin-bottom: 65px;
+  }
+  
+  .img-slide {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+  }
+  
+  .img-slide.active {
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip;
+  }
+  
+  @media (max-width: 1040px) {
+    header {
+      padding: 12px 20px;
+    }
+    section {
+      padding: 100px 20px;
+    }
+    header .navigation {
+      display: none;
+    }
+    header .navigation.active {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(1, 1, 1, 0.5);
+    }
+  
+    header .navigation .navigation-items a {
+      color: #222;
+      font-size: 1.2rem;
+      margin: 20px;
+    }
+    header .navigation .navigation-items a:before {
+      background: #222;
+      height: 5px;
+    }
+  
+    header .navigation .navigation-items {
+      background: #fff;
+      width: 600px;
+      max-width: 600px;
+      margin: 20px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 5px;
+      box-shadow: 0 5px 25px rgb(1 1 1 /20%);
+    }
+  }
+  
